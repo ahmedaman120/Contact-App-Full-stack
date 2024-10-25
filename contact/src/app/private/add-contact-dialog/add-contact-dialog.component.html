@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{updateStatus ? 'Update' :'Add'}} New Contact</h2>
+<form [formGroup]="contactForm" (ngSubmit)="addContact()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Phone Number</mat-label>
+    <input matInput formControlName="phoneNumber">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="address">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Notes</mat-label>
+    <input matInput formControlName="notes">
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button type="button" (click)="cancel()">Cancel</button>
+    <button mat-button type="submit">{{updateStatus ? 'Update' :'Add'}}</button>
+  </div>
+</form>
